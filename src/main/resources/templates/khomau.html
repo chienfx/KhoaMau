@@ -11,6 +11,18 @@
 
     <div class="container">
 
+
+        <div id="tim">
+            <div id="bored">
+
+                    <input type="text" name="" id="timkiem" placeholder="Tìm kiếm">
+
+                    <div id="iconn">
+                        <a href="#"><i class="fas fa-search"></i></a>
+                    </div>
+            </div>
+        </div>
+
         <table border="1">
             <tr>
                 <th>ID</th>
@@ -18,9 +30,11 @@
                 <th>don vi</th>
             </tr>
             <tr th:each="khoMau : ${khoMaus}">
+
                 <th th:utext="${khoMau.id}">...</th>
                 <th th:utext="${khoMau.nhommau}">...</th>
                 <th th:utext="${khoMau.donvi}">...</th>
+
             </tr>
         </table>
 
