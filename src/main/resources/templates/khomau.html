@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:include="/head"></th:block>
+
+<body>
+
+<div class="container" id="wrapper" style="background-color: rgba(255,255,255,0.7);">
+
+    <th:block th:include="/menu"></th:block>
+
+    <div class="container">
+
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>nhom mau</th>
+                <th>don vi</th>
+            </tr>
+            <tr th:each="khoMau : ${khoMaus}">
+                <th th:utext="${khoMau.id}">...</th>
+                <th th:utext="${khoMau.nhommau}">...</th>
+                <th th:utext="${khoMau.donvi}">...</th>
+            </tr>
+        </table>
+
+    </div> <!--Container-->
+</div>
+
+<hr style="border: 1px solid red;">
+
+<th:block th:include="/footer"></th:block>
+
+</body>
+</html>

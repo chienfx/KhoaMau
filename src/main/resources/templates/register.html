@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:include="/head"></th:block>
+
+<body>
+
+<div class="container" id="wrapper" style="background-color: rgba(255,255,255,0.7);">
+
+    <th:block th:include="/menu"></th:block>
+
+    <div class="container">
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!--<a href="register.php" class="active" id="">Đăng kí</a>-->
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+
+                            <form id="register-form" role="form" method="post" novalidate="novalidate" th:action="@{contact/save}" th:object="${contact}">
+
+                                <div class="form-group">
+                                    <input type="text" name="hoten" id="hovaten" class="form-control" placeholder="Họ và Tên" value="" th:field="*{hoTen}" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" name="SDT" id="SDT"  class="form-control" placeholder="SDT" value="" required th:field="*{sdt}">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="" required th:field="*{email}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="facebook" id="facebook" class="form-control" placeholder="Facebook" value="" required th:field="*{fb}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="gioitinh" id="gioitinh" class="form-control" placeholder="Giới tính" required th:field="*{gioiTinh}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="tuoi" id="tuoi"  class="form-control" placeholder="Tuổi" required th:field="*{tuoi}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="nhommau" id="nhommau" class="form-control" placeholder="Nhóm máu" required th:field="*{nhomMau}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="diachi" id="diachi" class="form-control" placeholder="Địa chỉ" required th:field="*{diaChi}">
+                                </div>
+                                <!--   <div class="form-group">
+                                       <p>lịch hiến máu </p>
+                                   </div>
+                                   <div class="form-group">
+                                       <input type="date" name="date" id="date"  class="form-control" required th:field="*{ngayHen}">
+                                   </div>-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+
+                                            <!--dangki-->
+                                            <input type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register" value="Đăng kí">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!--Container-->
+</div>
+
+
+<hr style="border: 1px solid red;">
+<th:block th:include="/footer"></th:block>
+
+</body>
+</html>
