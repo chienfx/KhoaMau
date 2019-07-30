@@ -247,19 +247,15 @@ tr th {
     border: 1px solid red;
 }
 #iconn{
-    border: 1px solid red;
-    width: 50px;
-    height: 37px;
+
+    width: 40px;
+    height: 31px;
     float: left;
 }
-#iconn:hover{
-    background-color:red ;
-}
-#iconn a{
-    text-decoration: none;
-}
 #iconn i{
-    padding:11px 0 0 17px;
+    padding: 9px 0 0 0;
 }
+
+
 
 

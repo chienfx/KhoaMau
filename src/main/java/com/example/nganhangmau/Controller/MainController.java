@@ -1,17 +1,15 @@
 package com.example.nganhangmau.Controller;
 
-import com.example.nganhangmau.Dao.KhomauDao;
+/*import com.example.nganhangmau.Dao.KhomauDao;*/
 import com.example.nganhangmau.Entities.Nguoihienmau;
 import com.example.nganhangmau.Entities.khoMau;
 import com.example.nganhangmau.Service.HienmauService;
+import com.example.nganhangmau.Service.KhomauService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -19,22 +17,35 @@ import java.util.List;
 
 @Controller
 public class MainController {
-
-    private HienmauService hienmauService;
     @Autowired
-    private KhomauDao khomauDao;
+    private KhomauService khomauService;
+    private HienmauService hienmauService;
 
+   /* private KhomauDao khomauDao;*/
 
+    @Autowired
+    public  void setKhomauService(KhomauService khomauService){
+        this.khomauService = khomauService;
+    }
     @Autowired
     public void setHienmauService(HienmauService hienmauService) {
         this.hienmauService = hienmauService;
     }
 
-    @RequestMapping(value = "/khomau", method = RequestMethod.GET)
+
+
+
+
+    /*@RequestMapping(value = "/khomau", method = RequestMethod.GET)
     public String showKhoMau(Model model) {
         List<khoMau> list = khomauDao.listKhoMauInfo();
         model.addAttribute("khoMaus", list);
 
+        return "khomau";
+    }*/
+    @GetMapping("/khomau")
+    public String KhoMau1(Model model){
+        model.addAttribute("khomaus",khomauService.findAll());
         return "khomau";
     }
 
@@ -83,6 +94,26 @@ public class MainController {
         hienmauService.save(nguoihienmau);
        /* redirect.addFlashAttribute("success","save successfully!");*/
         return "redirect:/contact";
+    }
+
+    /*@GetMapping("/contact/search")
+    public String search(@RequestParam("nhommau") String nhommau, Model model) {
+        if (nhommau.equals("")) {
+            return "redirect:/khoMau";
+        }
+
+        model.addAttribute("contacts", khomauService.search(nhommau));
+        return "list";
+    }*/
+    @GetMapping("/khomau/search")
+    public String search(@RequestParam("s") String s,Model model){
+        if(s.equals("")){
+            return "redirect:khomau";
+        }
+
+        model.addAttribute("khomaus",khomauService.search(s));
+        return "khomau";
+
     }
 
 

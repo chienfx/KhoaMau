@@ -1,6 +1,7 @@
 package com.example.nganhangmau.Service;
 
 import com.example.nganhangmau.Entities.Nguoihienmau;
+import com.example.nganhangmau.Entities.khoMau;
 import com.example.nganhangmau.Repository.HienmauRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,9 @@ public class HienmauServiceImpl implements HienmauService {
     }
 
     @Override
-    public Iterable<Nguoihienmau> search(String hoTen){
+    public Iterable<Nguoihienmau> searchh(String hoTen){
         return hienmauRepository.findByHoTen(hoTen);
     }
+
 
 }

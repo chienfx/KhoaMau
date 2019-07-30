@@ -1,3 +1,4 @@
+/*
 package com.example.nganhangmau.Dao;
 
 import com.example.nganhangmau.Entities.khoMau;
@@ -28,3 +29,4 @@ public class KhomauDao {
         return query.getResultList();
     }
 }
+*/

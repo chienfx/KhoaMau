@@ -15,11 +15,16 @@
         <div id="tim">
             <div id="bored">
 
-                    <input type="text" name="" id="timkiem" placeholder="Tìm kiếm">
+                <form th:action="@{/khomau/search}"  method="get">
+                    <input type="search" name="s" id="timkiem" placeholder="Tìm kiếm">
 
-                    <div id="iconn">
-                        <a href="#"><i class="fas fa-search"></i></a>
-                    </div>
+                        <button style="background-color: #ffffff">
+                            <div id="iconn">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </button>
+
+                </form>
             </div>
         </div>
 
@@ -29,11 +34,12 @@
                 <th>nhom mau</th>
                 <th>don vi</th>
             </tr>
-            <tr th:each="khoMau : ${khoMaus}">
+            <tr th:each="khoMau,iterStat : ${khomaus}">
 
-                <th th:utext="${khoMau.id}">...</th>
-                <th th:utext="${khoMau.nhommau}">...</th>
-                <th th:utext="${khoMau.donvi}">...</th>
+                <th th:text="${iterStat.count}">...</th>
+                <!--<th th:text="${khoMau.id}">...</th>-->
+                <th th:text="${khoMau.nhommau}">...</th>
+                <th th:text="${khoMau.donvi}">...</th>
 
             </tr>
         </table>

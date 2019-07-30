@@ -8,4 +8,5 @@ public interface HienmauRepository extends CrudRepository<Nguoihienmau,Integer> 
 
     Iterable<Nguoihienmau> findByHoTen(String ten);
 
+
 }

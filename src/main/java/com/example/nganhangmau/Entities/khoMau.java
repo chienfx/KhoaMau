@@ -1,19 +1,16 @@
 package com.example.nganhangmau.Entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "khomau")
-public class khoMau {
+public class khoMau implements Serializable {
 
-    public khoMau(int id, String nhommau, int donvi) {
-        this.id = id;
-        this.nhommau = nhommau;
-        this.donvi = donvi;
-    }
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
 
@@ -22,6 +19,18 @@ public class khoMau {
 
     @Column(name = "donvi", length = 10)
     private int donvi;
+
+    public khoMau(){
+        super();
+    }
+
+    public khoMau(int id, String nhommau, int donvi) {
+        this.id = id;
+        this.nhommau = nhommau;
+        this.donvi = donvi;
+
+
+    }
 
     public int getId() {
         return id;
@@ -46,4 +55,6 @@ public class khoMau {
     public void setDonvi(int donvi) {
         this.donvi = donvi;
     }
+
+
 }
