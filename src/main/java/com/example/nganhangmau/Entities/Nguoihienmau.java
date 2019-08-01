@@ -14,28 +14,28 @@ public class Nguoihienmau implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
-    @NotEmpty(message = "nhap ho ten")
+
     @Column(name = "hoten", nullable = false)
     private String hoTen;
-    @NotEmpty(message = "nhap so dien thoai")
+
     @Column(name = "sdt", nullable = false)
     private int sdt;
-    @NotEmpty(message = "nhap email")
+
     @Column(name = "email", nullable = false)
     private String email;
-    @NotEmpty(message = "nhap ten facebook")
+
     @Column(name = "fb", nullable = false)
     private String fb;
-    @NotEmpty(message = "nhap gioi tinh")
+
     @Column(name = "gioitinh", nullable = false)
     private String gioiTinh;
-    @NotEmpty(message = "nhap tuoi")
+
     @Column(name = "tuoi", nullable = false)
     private int tuoi;
-    @NotEmpty(message = "nhap nhommau")
+
     @Column(name = "nhommau",nullable = false)
     private String nhomMau;
-    @NotEmpty(message = "nhap dia chi")
+
     @Column(name = "diachi", nullable = false)
     private String diaChi;
 
